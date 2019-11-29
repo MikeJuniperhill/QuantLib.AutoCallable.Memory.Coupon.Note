@@ -150,7 +150,7 @@ def AutoCallableNote(valuationDate, couponDates, strike, pastFixings,
     return np.mean(np.array(global_pv))
 
 # general QuantLib-related parameters
-valuationDate = ql.Date(6,11,2015)
+valuationDate = ql.Date(20,11,2019)
 ql.Settings.instance().evaluationDate = valuationDate
 convention = ql.ModifiedFollowing
 dayCounter = ql.Actual360()
@@ -168,7 +168,7 @@ coupon = 0.05
 hasMemory = True
 
 # coupon schedule for note
-startDate = ql.Date(6,11,2015)
+startDate = ql.Date(20,11,2019)
 firstCouponDate = calendar.advance(startDate, ql.Period(1, ql.Years))
 lastCouponDate = calendar.advance(startDate, ql.Period(7, ql.Years))
 couponDates = np.array(list(ql.Schedule(firstCouponDate, lastCouponDate, ql.Period(ql.Annual), 
